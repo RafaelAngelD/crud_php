@@ -1,11 +1,17 @@
 <?php
+//Validación de login
+include_once("auth.php");
+verificarSesion();
+?>
+
+<?php
 include_once('conexionbd.php');
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-// Obtener el id enviado de index
+// Obtener el id enviado del index
 $idRegistro = $_GET['id'];
 
 // Preparar la consulta para evitar inyecciones SQL

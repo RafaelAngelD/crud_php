@@ -1,4 +1,10 @@
 <?php
+//Validación de login
+include_once("auth.php");
+verificarSesion();
+?>
+
+<?php
 include_once('conexionbd.php');
 
 ini_set('display_errors', 1);

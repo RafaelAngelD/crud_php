@@ -1,11 +1,17 @@
-<?php include_once("header.php");
+<?php
+//Validación de login
+include_once("auth.php");
+verificarSesion();
+?>
 
+<?php 
+include_once("header.php");
 include_once("conexionbd.php");
 
 // Crear y seleccionar query
 $query = "SELECT * FROM usuarios ORDER BY id DESC";
 
-// Asegurarse de que `$conn` esté definido (reemplaza `$this->conn` con `$conn`)
+
 $stmt = $conn->prepare($query);
 $stmt->execute();
 $registros = $stmt->fetchAll(PDO::FETCH_ASSOC);
